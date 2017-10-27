@@ -1,2 +1,2 @@
-# burger
-This repository is for assignment #14 for UA Coding Bootcamp.
+# sequelizedBurger
+This repository is for (optional!!) assignment #15 for UA Coding Bootcamp.
