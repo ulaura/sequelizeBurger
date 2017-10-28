@@ -1,25 +1,30 @@
-// Import orm.js to create functions that will interact with
-// the database.
-var orm = require("../config/orm.js");
+// Creating the model (table) called burgers for burgers_db
 
-var burger = {
-	selectAll: function(cb) {
-		orm.selectAll("burgers", function(res) {
-			cb(res);
-		});
-	},
-	insertOne: function(valOfCol, valOfOtherCol, cb) {
-		orm.insertOne("burgers", valOfCol, valOfOtherCol, function(res) {
-			cb(res);
-		});
-	},
-	updateOne: function(columnInput, condition, cb) {
-		orm.updateOne("burgers", columnInput, condition, function(res) {
-			cb(res);
-		});
-	}
-};
+// Dependencies
+// Sequelize (capital) references the standard library
+var Sequelize = require("sequelize");
+// sequelize (lowercase) references my connection to the DB.
+var sequelize = require("../config/config.js");
 
-// Export database functions for the controller (burgers_controller.js)
-module.exports = burger;
+// Creates a "burgers" model that matches up with DB
+var Burgers = sequelize.define("burgers", {
+  burger_name: {
+    type: Sequelize.STRING,
+    allowNull: false
+    validate: {
+    	len: [1]
+    }
+  },
+  devoured: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  }
+}, {
+  timestamps: true
+});
 
+// Syncs with DB
+Burgers.sync();
+
+// Makes the Book Model available for other files (will also create a table)
+module.exports = Burgers;
