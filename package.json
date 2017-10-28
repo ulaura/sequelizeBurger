@@ -1,14 +1,14 @@
 {
-  "name": "burger",
+  "name": "sequelizedBurger",
   "version": "1.0.0",
-  "description": "An app that allows users to input a burger, watch their burger list grow, and devour each burger from the list.",
+  "description": "A 'sequel' to burger. An app that allows users to input a burger, watch their burger list grow, and devour each burger from the list. This version uses Sequelize instead of ORM.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ulaura/burger.git"
+    "url": "git+https://github.com/ulaura/sequelizedBurger.git"
   },
   "keywords": [
     "burger",
@@ -19,19 +19,23 @@
     "handlebars",
     "method-override",
     "body-parser",
-    "mysql"
+    "mysql",
+    "sequelize",
+    "mysql2"
   ],
   "author": "Laura Unaeze",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ulaura/burger/issues"
+    "url": "https://github.com/ulaura/sequelizedBurger/issues"
   },
-  "homepage": "https://github.com/ulaura/burger#readme",
+  "homepage": "https://github.com/ulaura/sequelizedBurger#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.19.0"
   }
 }
